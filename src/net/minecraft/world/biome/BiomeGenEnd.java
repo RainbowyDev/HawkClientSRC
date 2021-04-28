@@ -1,0 +1,28 @@
+package net.minecraft.world.biome;
+
+import net.minecraft.entity.monster.*;
+import net.minecraft.init.*;
+
+public class BiomeGenEnd extends BiomeGenBase
+{
+    public BiomeGenEnd(final int llllllllllllllIlIIlIlIlIllIlIIll) {
+        super(llllllllllllllIlIIlIlIlIllIlIIll);
+        this.spawnableMonsterList.clear();
+        this.spawnableCreatureList.clear();
+        this.spawnableWaterCreatureList.clear();
+        this.spawnableCaveCreatureList.clear();
+        this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 10, 4, 4));
+        this.topBlock = Blocks.dirt.getDefaultState();
+        this.fillerBlock = Blocks.dirt.getDefaultState();
+        this.theBiomeDecorator = new BiomeEndDecorator();
+    }
+    
+    @Override
+    public int getSkyColorByTemp(final float llllllllllllllIlIIlIlIlIllIIllll) {
+        return 0;
+    }
+    
+    static {
+        __OBFID = "CL_00000187";
+    }
+}
